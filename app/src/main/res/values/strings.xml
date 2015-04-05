@@ -3,4 +3,12 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="celsius">°C</string>
+    <string name="fahrenheit">°F</string>
+    <string name="left_arrow">←</string>
+    <string name="right_arrow">→</string>
+    <string name="up_arrow">↑</string>
+    <string name="down_arrow">↓</string>
+    <string name="c_to_f">°C→°F</string>
+    <string name="f_to_c">°F→°C</string>
 </resources>

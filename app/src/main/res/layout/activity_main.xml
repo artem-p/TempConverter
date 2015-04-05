@@ -5,7 +5,57 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="16"
+        android:id="@+id/tvCelsium"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:hint="@string/celsius"
+        android:textSize="32sp"
+        />
+    <LinearLayout
+        android:id="@+id/btnLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/tvCelsium"
+        android:layout_centerHorizontal="true">
+
+        <ImageButton
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/down_arrow"
+            android:textSize="24sp"
+            android:src="@drawable/ic_action_collapse"
+            android:id="@+id/btnCtoF"/>
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/up_arrow"
+            android:id="@+id/btnFtoC"
+            android:textSize="24sp"
+            android:layout_alignTop="@+id/btnCtoF"
+            android:layout_toRightOf="@+id/btnCtoF"/>
+    </LinearLayout>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:hint="@string/fahrenheit"
+        android:ems="16"
+        android:id="@+id/tvFahr"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/btnLayout"
+        android:textSize="32sp"
+        />
 
 </RelativeLayout>
