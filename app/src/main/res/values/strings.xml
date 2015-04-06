@@ -11,4 +11,5 @@
     <string name="down_arrow">↓</string>
     <string name="c_to_f">°C→°F</string>
     <string name="f_to_c">°F→°C</string>
+    <string name="action_update">обновить</string>
 </resources>
