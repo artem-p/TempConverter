@@ -4,8 +4,8 @@ package ru.artempugachev.tempconverter;
  * Created by artem on 07.04.15.
  */
 public class Temperature {
-    float celsius;
-    float fahrenheit;
+    private float celsius;
+    private float fahrenheit;
 
     public Temperature() {
     }
@@ -28,7 +28,8 @@ public class Temperature {
 
     public void celsiusToFahrenheit() {
         //  tf = tc*9/5 + 32
-
+        float fahrTemp = this.getCelsius()*9/5 + 32;
+        this.setFahrenheit(fahrTemp);
     }
 
     public void fahrrenheitToCelsius() {
