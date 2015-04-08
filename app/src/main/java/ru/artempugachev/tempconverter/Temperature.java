@@ -6,6 +6,7 @@ package ru.artempugachev.tempconverter;
 public class Temperature {
     private float celsius;
     private float fahrenheit;
+    public final static float DEFAULT_TEMP = 99999;
 
     public Temperature() {
     }
@@ -28,6 +29,7 @@ public class Temperature {
 
     public void celsiusToFahrenheit() {
         //  tf = tc*9/5 + 32
+
         float fahrTemp = this.getCelsius()*9/5 + 32;
         this.setFahrenheit(fahrTemp);
     }

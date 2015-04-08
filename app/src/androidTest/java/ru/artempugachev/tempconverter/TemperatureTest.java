@@ -12,6 +12,11 @@ public class TemperatureTest extends TestCase {
         temperature = new Temperature();
     }
 
+    public void testEmptyTemperature() {
+        assertEquals(Temperature.DEFAULT_TEMP, temperature.getCelsius());
+        assertEquals(Temperature.DEFAULT_TEMP, temperature.getFahrenheit());
+    }
+
     public void testCtoF() {
         //  42 °C = 107.6 °F
         temperature.setCelsius(42);
@@ -35,19 +40,20 @@ public class TemperatureTest extends TestCase {
         assertEquals(expectedFahr, fahrTemp);
     }
 
-//    public void testFtoC() {
-//        //104 40
-//        temperature.setFahrenheit(104);
-//        temperature.fahrrenheitToCelsius();
-//        float celsiusTemp = temperature.getFahrenheit();
-//        float expectedCelsius = (float) 40;
-//        assertEquals(expectedCelsius, celsiusTemp);
-//
-//        // -40 -40
-//        temperature.setFahrenheit(-40);
-//        temperature.fahrrenheitToCelsius();
-//        celsiusTemp = temperature.getFahrenheit();
-//        expectedCelsius = (float) -40;
-//        assertEquals(expectedCelsius, celsiusTemp);
-//    }
+    public void testFtoC() {
+        //32 0
+        temperature.setFahrenheit(32);
+        temperature.fahrrenheitToCelsius();
+        float celsiusTemp = temperature.getCelsius();
+        float expectedCelsius = (float) 0;
+        assertEquals(expectedCelsius, celsiusTemp);
+
+        // -58 = -50
+        temperature.setFahrenheit(-58);
+        temperature.fahrrenheitToCelsius();;
+        celsiusTemp = temperature.getCelsius();
+        expectedCelsius = (float) -50;
+        assertEquals(expectedCelsius, celsiusTemp);
+
+    }
 }
