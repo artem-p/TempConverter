@@ -9,6 +9,8 @@ public class Temperature {
     public final static float DEFAULT_TEMP = 99999;
 
     public Temperature() {
+        this.celsius = DEFAULT_TEMP;
+        this.fahrenheit = DEFAULT_TEMP;
     }
 
     public float getCelsius() {
@@ -36,6 +38,7 @@ public class Temperature {
 
     public void fahrrenheitToCelsius() {
         //  tC = 5/9 (tF - 32)
-
+        float celsiusTemp = (this.getFahrenheit() - 32)*5/9;
+        this.setCelsius(celsiusTemp);
     }
 }
