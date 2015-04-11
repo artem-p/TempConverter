@@ -69,7 +69,9 @@ public class MainActivity extends ActionBarActivity {
     private View.OnClickListener ctoFListener = new View.OnClickListener(){
 
         public void onClick(View v) {
-            m_tvFahr.setText("ctof");
+            m_temperature.setCelsius(Float.parseFloat(m_tvCelsius.getText().toString()));
+            m_temperature.celsiusToFahrenheit();
+            m_tvFahr.setText(String.valueOf(m_temperature.getFahrenheit()));
         }
     };
 
@@ -77,7 +79,9 @@ public class MainActivity extends ActionBarActivity {
 
         @Override
         public void onClick(View v) {
-            m_tvCelsius.setText("ftoc");
+            m_temperature.setFahrenheit(Float.parseFloat(m_tvFahr.getText().toString()));
+            m_temperature.fahrrenheitToCelsius();
+            m_tvCelsius.setText(String.valueOf(m_temperature.getCelsius()));
         }
     };
 }
