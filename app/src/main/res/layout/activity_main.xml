@@ -29,7 +29,7 @@
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_action_collapse"
+            android:src="@drawable/ic_action_expand"
             android:id="@+id/btnCtoF"/>
 
         <ImageButton
@@ -37,7 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btnFtoC"
-            android:src="@drawable/ic_action_expand"
+            android:src="@drawable/ic_action_collapse"
             android:layout_alignTop="@+id/btnCtoF"
             android:layout_toRightOf="@+id/btnCtoF"/>
     </LinearLayout>
