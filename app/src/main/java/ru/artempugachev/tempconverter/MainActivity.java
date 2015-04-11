@@ -1,19 +1,22 @@
 package ru.artempugachev.tempconverter;
 
-import android.content.Context;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.inputmethod.InputMethodManager;
+import android.widget.TextView;
 
 
 public class MainActivity extends ActionBarActivity {
+    private TextView m_tvCelsius;
+    private TextView m_tvFahr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        m_tvCelsius = (TextView) findViewById(R.id.tvCelsius);
+        m_tvFahr = (TextView) findViewById(R.id.tvFahr);
     }
 
 
@@ -34,6 +37,12 @@ public class MainActivity extends ActionBarActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+        }
+
+        if(id == R.id.action_refresh) {
+            //  Очищаем поля ввода
+            m_tvCelsius.setText("");
+            m_tvFahr.setText("");
         }
 
         return super.onOptionsItemSelected(item);
