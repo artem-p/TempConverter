@@ -67,11 +67,15 @@ public class MainActivity extends ActionBarActivity {
     }
 
     private View.OnClickListener ctoFListener = new View.OnClickListener(){
-
+        @Override
         public void onClick(View v) {
-            m_temperature.setCelsius(Float.parseFloat(m_tvCelsius.getText().toString()));
-            m_temperature.celsiusToFahrenheit();
-            m_tvFahr.setText(String.valueOf(m_temperature.getFahrenheit()));
+            String sCelsius = m_tvCelsius.getText().toString();
+            if(sCelsius.length() > 0) {
+                m_temperature.setCelsius(Float.parseFloat(sCelsius));
+                m_temperature.celsiusToFahrenheit();
+                m_tvFahr.setText(String.valueOf(m_temperature.getFahrenheit()));
+            }
+
         }
     };
 
@@ -79,9 +83,13 @@ public class MainActivity extends ActionBarActivity {
 
         @Override
         public void onClick(View v) {
-            m_temperature.setFahrenheit(Float.parseFloat(m_tvFahr.getText().toString()));
-            m_temperature.fahrrenheitToCelsius();
-            m_tvCelsius.setText(String.valueOf(m_temperature.getCelsius()));
+            String sFahr = m_tvFahr.getText().toString();
+            if(sFahr.length() > 0) {
+                m_temperature.setFahrenheit(Float.parseFloat(sFahr));
+                m_temperature.fahrrenheitToCelsius();
+                m_tvCelsius.setText(String.valueOf(m_temperature.getCelsius()));
+            }
+
         }
     };
 }
