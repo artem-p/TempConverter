@@ -86,6 +86,14 @@
             />
     </LinearLayout>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fahrLayout"
+        android:layout_centerHorizontal="true"
+        android:text="@string/action_update"
+        android:id="@+id/btnRefresh"/>
+
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView"
         android:layout_width="wrap_content"

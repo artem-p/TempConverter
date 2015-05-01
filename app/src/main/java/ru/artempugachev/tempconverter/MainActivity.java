@@ -20,6 +20,7 @@ public class MainActivity extends ActionBarActivity {
     private ImageButton m_btnFtoC;
     private Temperature m_temperature;
     private AdView m_adView;
+    private Button m_btnRefresh;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +44,10 @@ public class MainActivity extends ActionBarActivity {
         m_adView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         m_adView.loadAd(adRequest);
+
+        m_btnRefresh = (Button) findViewById(R.id.btnRefresh);
+
+        m_btnRefresh.setOnClickListener(refreshListener);
     }
 
     @Override
@@ -65,13 +70,25 @@ public class MainActivity extends ActionBarActivity {
 //        }
 
         if(id == R.id.action_refresh) {
-            //  Очищаем поля ввода
-            m_tvCelsius.setText("");
-            m_tvFahr.setText("");
+            refreshFields();
         }
 
         return super.onOptionsItemSelected(item);
     }
+
+    private void refreshFields() {
+        //  Очищаем поля ввода
+        m_tvCelsius.setText("");
+        m_tvFahr.setText("");
+    }
+
+    private View.OnClickListener refreshListener = new View.OnClickListener(){
+
+        @Override
+        public void onClick(View v) {
+            refreshFields();
+        }
+    };
 
     private View.OnClickListener ctoFListener = new View.OnClickListener(){
         @Override
