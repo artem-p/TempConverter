@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -17,6 +19,7 @@ public class MainActivity extends ActionBarActivity {
     private ImageButton m_btnCtoF;
     private ImageButton m_btnFtoC;
     private Temperature m_temperature;
+    private AdView m_adView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +39,10 @@ public class MainActivity extends ActionBarActivity {
         m_btnFtoC.setOnClickListener(fToCListener);
 
         m_temperature = new Temperature();
+
+        m_adView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        m_adView.loadAd(adRequest);
     }
 
     @Override
