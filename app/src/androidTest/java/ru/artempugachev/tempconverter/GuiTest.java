@@ -67,6 +67,21 @@ public class GuiTest
         onView(withId(R.id.btnRefresh)).perform(click());
     }
 
+    public void testFahrToCelsius() {
+        onView(withId(R.id.tvFahr)).perform(typeText("451"), closeSoftKeyboard());
+        onView(withId(R.id.btnFtoC)).perform(click());
+        onView(withId(R.id.tvCelsius)).check(matches(withText("232.77777")));
+        onView(withId(R.id.btnRefresh)).perform(click());
 
+        onView(withId(R.id.tvFahr)).perform(typeText("-33.33333"), closeSoftKeyboard());
+        onView(withId(R.id.btnFtoC)).perform(click());
+        onView(withId(R.id.tvCelsius)).check(matches(withText("-36.29629")));
+        onView(withId(R.id.btnRefresh)).perform(click());
+
+        onView(withId(R.id.tvFahr)).perform(typeText("42"), closeSoftKeyboard());
+        onView(withId(R.id.btnFtoC)).perform(click());
+        onView(withId(R.id.tvCelsius)).check(matches(withText("5.5555553")));
+        onView(withId(R.id.btnRefresh)).perform(click());
+    }
 
 }
