@@ -69,9 +69,9 @@ public class MainActivity extends ActionBarActivity {
 //            return true;
 //        }
 
-        if(id == R.id.action_refresh) {
-            refreshFields();
-        }
+//        if(id == R.id.action_refresh) {
+//            refreshFields();
+//        }
 
         return super.onOptionsItemSelected(item);
     }

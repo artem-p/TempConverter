@@ -6,3 +6,4 @@
 .DS_Store
 /build
 .idea/gradle.xml
+.idea/modules.xml
