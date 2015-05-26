@@ -33,10 +33,14 @@ android {
         }
     }
     buildTypes {
+        debug {
+            resValue "string", "banner_ad_unit_id", "ca-app-pub-3940256099942544/6300978111"
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
+            resValue "string", "banner_ad_unit_id", "releaseAdmobId"
         }
     }
 }
