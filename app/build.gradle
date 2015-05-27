@@ -40,7 +40,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
-            resValue "string", "banner_ad_unit_id", "releaseAdmobId"
+            resValue "string", "banner_ad_unit_id", System.getenv("TEMP_BANNER_RELEASE_ID")
         }
     }
 }

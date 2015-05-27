@@ -28,7 +28,7 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
         getViews();
 
-        m_tvCelsius.setText(R.string.banner_ad_unit_id);
+//        m_tvCelsius.setText(R.string.banner_ad_unit_id);
     }
 
     private void getViews() {
